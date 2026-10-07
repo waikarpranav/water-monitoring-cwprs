@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Strict: single font family */
+
+  /* Colors */
+  --color-brand: #2563eb;
+  --color-safe: #16a34a;
+  --color-danger: #dc2626;
+  --color-warning: #d97706;
+
+  --color-navy-950: var(--bg-base);
+  --color-navy-900: var(--bg-surface);
+  --color-navy-800: var(--bg-elevated);
+  --color-navy-700: var(--border-subtle);
+  --color-navy-600: var(--border-accent);
+}
+
+:root {
+  /* Dark theme defaults */
+  --bg-base:        #111827;
+  --bg-surface:     #1f2937;
+  --bg-elevated:    #374151;
+  --border-subtle:  #374151;
+  --border-accent:  #4b5563;
+  --text-primary:   #f9fafb;
+  --text-secondary: #9ca3af;
+  --text-muted:     #6b7280;
+  --brand-blue:     #2563eb;
+  --status-safe:    #16a34a;
+  --status-danger:  #dc2626;
+  --status-warning: #d97706;
+  --shadow-card:    0 1px 3px rgba(0,0,0,0.3);
+}
+
+:root.light {
+  /* Strict Light theme neutrals */
+  --bg-base:        #f9fafb;
+  --bg-surface:     #ffffff;
+  --bg-elevated:    #f3f4f6;
+  --border-subtle:  #e5e7eb;
+  --border-accent:  #d1d5db;
+  --text-primary:   #111827;
+  --text-secondary: #6b7280;
+  --text-muted:     #9ca3af;
+  --brand-blue:     #2563eb;
+  --status-safe:    #16a34a;
+  --status-danger:  #dc2626;
+  --status-warning: #d97706;
+  --shadow-card:    0 1px 3px rgba(0,0,0,0.1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  min-height: 100svh;
+  display: flex;
+}
+
+/* Strict Type Scale */
+.text-12 { font-size: 12px; line-height: 16px; }
+.text-14 { font-size: 14px; line-height: 20px; }
+.text-16 { font-size: 16px; line-height: 24px; }
+.text-24 { font-size: 24px; line-height: 32px; }
+.text-36 { font-size: 36px; line-height: 40px; }
+
+/* Text utility classes */
+.text-primary { color: var(--text-primary) !important; }
+.text-secondary { color: var(--text-secondary) !important; }
+.text-muted { color: var(--text-muted) !important; }
+.text-brand { color: var(--brand-blue) !important; }
+
+/* Standard UI Card */
+.ui-card {
+  border-radius: 12px !important;
+  padding: 24px !important;
+  background-color: var(--bg-surface) !important;
+  border: 1px solid var(--border-subtle) !important;
+  box-shadow: var(--shadow-card) !important;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.ui-card:hover {
+  border-color: var(--border-accent) !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb { background: var(--border-accent); border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: var(--brand-blue); }
+
+.recharts-tooltip-wrapper { outline: none !important; }
